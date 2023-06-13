@@ -1,0 +1,17 @@
+def fibonacci(n):
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    else:
+        sequence = [0, 1]
+        for i in range(2, n):
+            next_num = sequence[i-1] + sequence[i-2]
+            sequence.append(next_num)
+        return sequence
+
+num_terms = int(input("请输入斐波那契数列的项数："))
+fib_sequence = fibonacci(num_terms)
+print("斐波那契数列：", fib_sequence)
